@@ -1,15 +1,4 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
-import * as express from 'express';
-
-const app = express();
-
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to api-1!' });
-});
+import { app } from './app';
 
 const port = process.env.port || 8001;
 const server = app.listen(port, () => {
