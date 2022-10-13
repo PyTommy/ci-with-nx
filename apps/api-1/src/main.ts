@@ -11,7 +11,7 @@ app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to api-1!' });
 });
 
-const port = process.env.port || 3333;
+const port = process.env.port || 8001;
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);
 });
