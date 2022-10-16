@@ -27,11 +27,16 @@ jobs:
         with:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v3
-      - run: npm i
-      - run: nx affected:build
-      - run: |
-        for app in $(nx affected:apps --plain); do
-          sh ./sh/deliver.sh develop $app build
-          sh ./sh/deliver.sh develop $app push
-          sh ./sh/deliver.sh develop $app deploy
-        done
+      - name: Install node_modules
+        run: |
+          npm i
+      - name: Build Apps
+        run: |
+          nx affected:build
+      - name: Deploy Apps
+        run: |
+          for app in $(nx affected:apps --plain); do
+            sh ./sh/deliver.sh develop $app build
+            sh ./sh/deliver.sh develop $app push
+            sh ./sh/deliver.sh develop $app deploy
+          done
