@@ -28,10 +28,10 @@ jobs:
           npm i
       - name: Build Apps
         run: |
-          nx affected:build
+          npx nx affected:build
       - name: Deploy Apps
         run: |
-          for app in $(nx affected:apps --plain); do
+          for app in $(npx nx affected:apps --plain); do
             sh ./sh/deliver.sh develop $app build
             sh ./sh/deliver.sh develop $app push
             sh ./sh/deliver.sh develop $app deploy
