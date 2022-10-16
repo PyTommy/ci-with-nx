@@ -5,7 +5,7 @@ const app = express();
 
 app.get('*', (req, res) => {
   const message = loveMessageGenerator();
-  const from = 'api-1/v2';
+  const from = 'api-1';
   res.send({ message, from });
 });
 
