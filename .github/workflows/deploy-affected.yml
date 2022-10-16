@@ -32,7 +32,7 @@ jobs:
       - name: Deploy Apps
         run: |
           for app in $(npx nx affected:apps --plain); do
-            sh ./sh/deliver.sh develop $app build
-            sh ./sh/deliver.sh develop $app push
-            sh ./sh/deliver.sh develop $app deploy
+            bash ./sh/deliver.sh develop $app build
+            bash ./sh/deliver.sh develop $app push
+            bash ./sh/deliver.sh develop $app deploy
           done
