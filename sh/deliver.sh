@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -eo pipefail
-
 declare -r ENV="${1:-develop}"
 declare -r APP="${2:-api-1}"
 declare -r CMD="${3:-build}"
